@@ -1,0 +1,11 @@
+import re
+
+def is_valid_mobile(number):
+    pattern = r'^[789]\d{9}$'
+    return re.match(pattern, number) is not None
+
+if __name__ == '__main__':
+    N = int(input())
+    for _ in range(N):
+        number = input().strip()
+        print("YES" if is_valid_mobile(number) else "NO")
