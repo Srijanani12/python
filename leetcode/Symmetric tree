@@ -1,0 +1,8 @@
+class Solution(object):
+    def isSymmetric(self, root):
+        def isSymmetric(L,R):
+            if not L and not R: return True
+            if L and R and L.val == R.val:
+                return isSymmetric(L.left, R.right) and isSymmetric(L.right, R.left)
+            return False
+        return isSymmetric(root, root)
