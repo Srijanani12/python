@@ -1,0 +1,7 @@
+class Solution(object):
+    def minimumTotal(self, triangle):
+        """
+        :type triangle: List[List[int]]
+        :rtype: int
+        """
+        return reduce(lambda a,b:[f+min(d,e)for d,e,f in zip(a,a[1:],b)],triangle[::-1])[0]
