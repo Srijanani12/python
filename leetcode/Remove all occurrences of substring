@@ -1,0 +1,11 @@
+class Solution(object):
+    def removeOccurrences(self, s, part):
+        """
+        :type s: str
+        :type part: str
+        :rtype: str
+        """
+        while part in s:
+            t=s.find(part)
+            s=s[:t]+s[t+len(part):]
+        return s
