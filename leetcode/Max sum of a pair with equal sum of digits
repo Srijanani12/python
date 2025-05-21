@@ -1,0 +1,16 @@
+class Solution(object):
+    def maximumSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        dsm={}
+        max_sum=-1
+        for num in nums:
+            ds = sum(int(d) for d in str(num))
+            if ds in dsm:
+                max_sum=max(max_sum,num+dsm[ds])
+                dsm[ds]=max(dsm[ds],num)
+            else:
+                dsm[ds]=num
+        return max_sum
